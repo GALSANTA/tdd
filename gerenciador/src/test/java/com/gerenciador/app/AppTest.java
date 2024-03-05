@@ -18,6 +18,7 @@ public class AppTest
 
     private Date data;
     private Tarefa tarefa1;
+    private Gerenciador gerenciador1;
 
     @Before
     public void setUp() {
@@ -30,6 +31,7 @@ public class AppTest
         }
 
         tarefa1 = new Tarefa(data, "Tarefa1", "descrição1", Prioridade.MEDIA);
+        gerenciador1 = new Gerenciador();
     }
     /**
      * Rigorous Test :-)
@@ -62,5 +64,11 @@ public class AppTest
     public void testGetPrioridade()
     {
         assertEquals(tarefa1.getPrioridade(), Prioridade.MEDIA);
+    }
+
+    @Test
+    public void testAdicionaTarefa()
+    {
+        assertTrue(gerenciador1.adicionaTarefa(tarefa1));
     }
 }
