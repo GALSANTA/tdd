@@ -27,4 +27,8 @@ public class Tarefa {
     public String getDescricao() {
         return descricao;
     }
+
+    public Prioridade getPrioridade() {
+        return prioridade;
+    }
 }

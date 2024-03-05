@@ -57,4 +57,10 @@ public class AppTest
     {
         assertEquals(tarefa1.getDescricao(), "descrição1");
     }
+
+    @Test
+    public void testGetPrioridade()
+    {
+        assertEquals(tarefa1.getPrioridade(), Prioridade.MEDIA);
+    }
 }
