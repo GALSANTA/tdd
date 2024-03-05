@@ -24,4 +24,7 @@ public class Tarefa {
         return titulo;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
 }

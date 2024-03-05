@@ -51,4 +51,10 @@ public class AppTest
     {
         assertEquals(tarefa1.getTitulo(), "Tarefa1");
     }
+
+    @Test
+    public void testGetDescricao()
+    {
+        assertEquals(tarefa1.getDescricao(), "descrição1");
+    }
 }
