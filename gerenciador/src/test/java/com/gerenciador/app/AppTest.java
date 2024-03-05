@@ -45,4 +45,10 @@ public class AppTest
     {
         assertEquals(tarefa1.getDataDeVencimento(), data);
     }
+
+    @Test
+    public void testGetTitulo()
+    {
+        assertEquals(tarefa1.getTitulo(), "Tarefa1");
+    }
 }

@@ -19,4 +19,9 @@ public class Tarefa {
     public Date getDataDeVencimento() {
         return dataDeVencimento;
     }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
 }
