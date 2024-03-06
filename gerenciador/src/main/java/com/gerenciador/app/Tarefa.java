@@ -31,4 +31,8 @@ public class Tarefa {
     public Prioridade getPrioridade() {
         return prioridade;
     }
+
+    public void setDataDeVencimento(Date dataDeVencimento) {
+        this.dataDeVencimento = dataDeVencimento;
+    }
 }

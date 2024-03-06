@@ -17,6 +17,7 @@ public class AppTest
 {
 
     private Date data;
+    private Date novaData;
     private Tarefa tarefa1;
     private Gerenciador gerenciador1;
 
@@ -25,6 +26,7 @@ public class AppTest
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         try {
             data = formato.parse("01/01/2024");
+            novaData = formato.parse("02/03/2024");
         } catch (ParseException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -70,5 +72,12 @@ public class AppTest
     public void testAdicionaTarefa()
     {
         assertTrue(gerenciador1.adicionaTarefa(tarefa1));
+    }
+
+    @Test
+    public void testAtualizaDataTarefa()
+    {
+        tarefa1.setDataDeVencimento(novaData);
+        assertEquals(tarefa1.getDataDeVencimento(), novaData);
     }
 }
