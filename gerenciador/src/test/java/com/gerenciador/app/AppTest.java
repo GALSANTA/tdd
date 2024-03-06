@@ -101,4 +101,10 @@ public class AppTest
         tarefa1.setPrioridade(Prioridade.ALTA);
         assertEquals(tarefa1.getPrioridade(), Prioridade.ALTA);
     }
+
+    @Test
+    public void testRemoverTarefaPeloIndex()
+    {
+        assertTrue(gerenciador1.removerTarefa(1));
+    }
 }

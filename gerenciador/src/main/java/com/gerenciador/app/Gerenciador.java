@@ -14,4 +14,16 @@ public class Gerenciador {
         return tarefas.add(tarefa);
     }
 
+    public boolean removerTarefa(Integer tarefaID){
+        tarefaID -= 1;
+        Boolean response = false;
+        try {
+            tarefas.remove(tarefaID);
+            response = true;
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+        return response;
+    }
+
 }
