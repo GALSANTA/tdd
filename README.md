@@ -52,6 +52,24 @@ make fiscal
 make test
 ```
 
+### 4.2 Gerenciador de Atividades
+
+#### Como executar o sistema:
+
+Dentro da pasta `tdd/gerenciador/`:
+
+```bash
+mvn exec:java -Dexec.mainClass="com.gerenciador.app.App"
+```
+
+#### Como executar os testes:
+
+Dentro da pasta `tdd/gerenciador/`:
+
+```bash
+mvn test
+```
+
 ## Referências
 
 * https://ubuntu.com/tutorials/install-jre#2-installing-openjdk-jre
