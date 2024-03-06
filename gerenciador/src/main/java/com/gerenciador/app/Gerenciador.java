@@ -31,16 +31,16 @@ public class Gerenciador {
         return tarefas.contains(tarefa);
     }
 
-    public boolean removerTarefa(Integer tarefaID){
+    public boolean removerTarefa(int tarefaID){
         tarefaID -= 1;
-        Boolean response = false;
+        Boolean result = false;
         try {
             tarefas.remove(tarefaID);
-            response = true;
+            result = true;
         } catch (Exception e) {
-            System.err.println(e);
+
         }
-        return response;
+        return result;
     }
 
     public String listaTarefas(){

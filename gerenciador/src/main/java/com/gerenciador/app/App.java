@@ -50,27 +50,55 @@ public class App
                         }
                         Tarefa novaTarefa = new Tarefa(dataFormatada, titulo, descricao, stringToPrioridade(prioridade));
                         gerenciador.adicionaTarefa(novaTarefa);
+                        System.out.println("\nPressione Enter!");
                         scanner.nextLine();
                         break;
                     case 2:
                         System.out.println("Que tarefa deseja atualizar? (número da tarefa)");
                         int tarefaId = scanner.nextInt();
                         System.out.println("O que deseja modificar na tarefa?: (Titulo, Data, Prioridade, Descricao) ");
+                        scanner.nextLine();
                         String mudanca = scanner.nextLine();
-                        if(mudanca.equalsIgnoreCase("Titulo")){
-                            // gerenciador.
-                        }
 
+                        if(mudanca.equalsIgnoreCase("Titulo")){
+                            System.out.println("Qual será o novo titulo?");
+                            String novoTitulo = scanner.nextLine();
+                            gerenciador.atualizaTituloTarefa(tarefaId, novoTitulo);
+                        }else if(mudanca.equalsIgnoreCase("Descricao")){
+                            System.out.println("Qual será a nova descrição?");
+                            String novaDescricao = scanner.nextLine();
+                            gerenciador.atualizaDescricao(tarefaId, novaDescricao);
+                        }else if(mudanca.equalsIgnoreCase("Prioridade")){
+                            System.out.println("Qual será a nova prioridade? (ALTA, MEDIA, BAIXA)");
+                            String novaPrioridade = scanner.nextLine();
+                            gerenciador.atualizaPrioridade(tarefaId, stringToPrioridade(novaPrioridade));
+                        }else if(mudanca.equalsIgnoreCase("Data")){
+                            System.out.println("Qual será a nova Data? (dd/MM/yyyy)");
+                            String novaData = scanner.nextLine();
+                            Date novaDataFormatada = new Date();
+                            SimpleDateFormat novoFormato = new SimpleDateFormat("dd/MM/yyyy");
+                            try {
+                                novaDataFormatada = novoFormato.parse(novaData);
+                            } catch (ParseException e) {
+                                e.printStackTrace();
+                            }
+                            gerenciador.atualizaDataTarefa(tarefaId, novaDataFormatada);
+                        }else{
+                            System.out.println("Essa não é um opção válida!");
+                        }
+                        System.out.println("\nPressione Enter!");
                         scanner.nextLine(); 
                         break;
                     case 3:
                         System.out.println("\nQue terefa deseja remover? (número da tarefa)");
-                        // int tarefaId = scanner.nextInt();
-                        // gerenciador.removerTarefa(tarefaId);
-                        // scanner.nextLine(); 
+                        int tarefaID = scanner.nextInt();
+                        gerenciador.removerTarefa(tarefaID);
+                        System.out.println("\nPressione Enter!");
+                        scanner.nextLine(); 
                         break;
                     case 4:
                         System.out.println(gerenciador.listaTarefas());
+                        System.out.println("\nPressione Enter!");
                         scanner.nextLine();
                         break;
                     case 5:
