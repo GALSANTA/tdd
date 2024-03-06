@@ -10,3 +10,6 @@ test:
 clean:
 	rm -rf ./target
 
+update:
+	mvn clean install -U
+
