@@ -65,4 +65,8 @@ public class Gerenciador {
         tarefas.get(tarefaID - 1).setPrioridade(novaPrioridade);
     }
 
+    public void atualizaDescricao(int tarefaID, String novaDescricao){
+        tarefas.get(tarefaID - 1).setDescricao(novaDescricao);
+    }
+
 }
