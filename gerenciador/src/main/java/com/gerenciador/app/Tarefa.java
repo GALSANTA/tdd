@@ -47,4 +47,10 @@ public class Tarefa {
     public void setPrioridade(Prioridade prioridade) {
         this.prioridade = prioridade;
     }
+
+    @Override
+    public String toString() {
+        return this.titulo + "\nData de Vencimento: " + dataDeVencimento.toString() + "\nPrioridade: " + 
+        prioridade.toString() + "\nDescrição: " + descricao + "\n";
+    }
 }

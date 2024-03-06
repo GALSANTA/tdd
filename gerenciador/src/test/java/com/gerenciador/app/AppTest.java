@@ -107,4 +107,10 @@ public class AppTest
     {
         assertTrue(gerenciador1.removerTarefa(1));
     }
+
+    @Test
+    public void testTarefaToString(){
+        String tarefaString = "Tarefa1\nData de Vencimento: Mon Jan 01 00:00:00 UTC 2024\nPrioridade: MEDIA\nDescrição: descrição1\n";
+        assertEquals(tarefa1.toString(), tarefaString);
+    }
 }
