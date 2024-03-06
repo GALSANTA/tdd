@@ -1,11 +1,17 @@
 package com.fiscal.app;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
-public class App 
-{
-    public static void main( String[] args )
-    {
+/**
+ * Main App.
+ * 
+ * @author Fernando Marques.
+ *
+ */
+
+public class App {
+    public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         int choice = 0;
@@ -19,12 +25,12 @@ public class App
 
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
-                scanner.nextLine(); 
+                scanner.nextLine();
 
                 switch (choice) {
                     case 1:
-                        System.out.println("\nAdicionando fatura");
-                        scanner.nextLine(); 
+                        clearScreen();
+                        Fatura f = addFatura(scanner);
                         break;
                     case 2:
                         System.out.println("Saindo");
@@ -35,14 +41,44 @@ public class App
                 }
             } else {
                 System.out.println("Entrada inválida. Por favor, insira um número.");
-                scanner.nextLine(); 
+                scanner.nextLine();
             }
         }
         scanner.close();
     }
 
-    private static void clearScreen() {  
-        System.out.print("\033[H\033[2J");  
-        System.out.flush();  
-    }  
+    private static Fatura addFatura(Scanner scanner) {
+
+        System.out.println("\n-- Adicionando fatura --\n");
+        System.out.print("\nNome: ");
+        String nome = scanner.next();
+        scanner.nextLine();
+
+        System.out.print("\nEndereco: ");
+        String endereco = scanner.next();
+        scanner.nextLine();
+
+        System.out.println("\nTipo de Servico");
+        System.out.println("1. CONSULTORIA");
+        System.out.println("2. TREINAMENTO");
+        System.out.println("3. OUTRO");
+        System.out.print("Servico: ");
+        TipoServico servico;
+        int escolha = scanner.nextInt();
+        scanner.nextLine();
+
+        if (escolha == 1) servico = TipoServico.CONSULTORIA;
+        else if (escolha == 2) servico = TipoServico.TREINAMENTO;
+        else servico = TipoServico.OUTRO;
+       
+        System.out.print("\nValor: $ ");
+        BigDecimal valor = scanner.nextBigDecimal();
+
+        return Fatura.criarFatura(nome, endereco, servico, valor);
+    }
+
+    private static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
 }
