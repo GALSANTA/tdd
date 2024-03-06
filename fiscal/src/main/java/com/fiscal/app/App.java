@@ -31,7 +31,14 @@ public class App {
                     case 1:
                         clearScreen();
                         Fatura f = addFatura(scanner);
-                        break;
+                        NotaFiscal nf = NotaFiscal.criarNotaFiscal(f);
+                        System.out.println(nf.toString());
+                        scanner.nextLine();
+
+                        NotaFiscalDao.salva(nf);
+                        SAP.envia(nf);
+                        SMTP.envia(nf);
+                        return;
                     case 2:
                         System.out.println("Saindo");
                         break;

@@ -1,7 +1,5 @@
 package com.fiscal.app;
 
-import java.math.BigDecimal;
-
 import com.fiscal.app.imposto.ImpostoConsultoria;
 import com.fiscal.app.imposto.ImpostoInterface;
 import com.fiscal.app.imposto.ImpostoOutro;
