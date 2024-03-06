@@ -57,4 +57,8 @@ public class Gerenciador {
         tarefas.get(tarefaID - 1).setDataDeVencimento(novaData);
     }
 
+    public void atualizaTituloTarefa(int tarefaID, String novoTitulo){
+        tarefas.get(tarefaID - 1).setTitulo(novoTitulo);
+    }
+
 }
