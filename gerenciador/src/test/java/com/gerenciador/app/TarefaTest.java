@@ -13,13 +13,12 @@ import org.junit.Test;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class TarefaTest 
 {
 
     private Date data;
     private Date novaData;
     private Tarefa tarefa1;
-    private Gerenciador gerenciador1;
 
     @Before
     public void setUp() {
@@ -33,7 +32,6 @@ public class AppTest
         }
 
         tarefa1 = new Tarefa(data, "Tarefa1", "descrição1", Prioridade.MEDIA);
-        gerenciador1 = new Gerenciador();
     }
     /**
      * Rigorous Test :-)
@@ -69,12 +67,6 @@ public class AppTest
     }
 
     @Test
-    public void testAdicionaTarefa()
-    {
-        assertTrue(gerenciador1.adicionaTarefa(tarefa1));
-    }
-
-    @Test
     public void testAtualizaDataTarefa()
     {
         tarefa1.setDataDeVencimento(novaData);
@@ -100,12 +92,6 @@ public class AppTest
     {
         tarefa1.setPrioridade(Prioridade.ALTA);
         assertEquals(tarefa1.getPrioridade(), Prioridade.ALTA);
-    }
-
-    @Test
-    public void testRemoverTarefaPeloIndex()
-    {
-        assertTrue(gerenciador1.removerTarefa(1));
     }
 
     @Test
