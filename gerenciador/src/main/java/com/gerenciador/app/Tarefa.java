@@ -35,4 +35,8 @@ public class Tarefa {
     public void setDataDeVencimento(Date dataDeVencimento) {
         this.dataDeVencimento = dataDeVencimento;
     }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 }

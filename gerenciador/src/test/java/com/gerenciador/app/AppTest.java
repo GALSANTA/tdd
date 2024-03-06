@@ -80,4 +80,11 @@ public class AppTest
         tarefa1.setDataDeVencimento(novaData);
         assertEquals(tarefa1.getDataDeVencimento(), novaData);
     }
+
+    @Test
+    public void testAtualizaTitulo()
+    {
+        tarefa1.setTitulo("Novo Titulo");
+        assertEquals(tarefa1.getTitulo(), "Novo Titulo");
+    }
 }
