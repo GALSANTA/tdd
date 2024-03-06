@@ -87,4 +87,11 @@ public class AppTest
         tarefa1.setTitulo("Novo Titulo");
         assertEquals(tarefa1.getTitulo(), "Novo Titulo");
     }
+
+    @Test
+    public void testAtualizaDescricao()
+    {
+        tarefa1.setDescricao("Nova Descrição");
+        assertEquals(tarefa1.getDescricao(), "Nova Descrição");
+    }
 }
