@@ -60,5 +60,9 @@ public class Gerenciador {
     public void atualizaTituloTarefa(int tarefaID, String novoTitulo){
         tarefas.get(tarefaID - 1).setTitulo(novoTitulo);
     }
+    
+    public void atualizaPrioridade(int tarefaID, Prioridade novaPrioridade){
+        tarefas.get(tarefaID - 1).setPrioridade(novaPrioridade);
+    }
 
 }
