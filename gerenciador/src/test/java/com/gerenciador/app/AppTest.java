@@ -94,4 +94,11 @@ public class AppTest
         tarefa1.setDescricao("Nova Descrição");
         assertEquals(tarefa1.getDescricao(), "Nova Descrição");
     }
+
+    @Test
+    public void testAtualizaPrioridade()
+    {
+        tarefa1.setPrioridade(Prioridade.ALTA);
+        assertEquals(tarefa1.getPrioridade(), Prioridade.ALTA);
+    }
 }
