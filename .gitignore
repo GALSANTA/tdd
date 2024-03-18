@@ -1,7 +1,2 @@
-
-./gerenciador/target/
-./gerenciador/target/target/classes/com/gerenciador/app/Gerenciador.class
-./gerenciador/target/target/classes/com/gerenciador/app/Tarefa.class
-./gerenciador/target/target/surefire-reports/
-./gerenciador/target/target/test-classes/com/gerenciador/app/
 fiscal/target
+gerenciador/target/
