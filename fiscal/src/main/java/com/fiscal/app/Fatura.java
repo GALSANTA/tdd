@@ -27,6 +27,7 @@ public class Fatura {
 
     public static Fatura criarFatura(String nome, String endereco, TipoServico servico, BigDecimal valor) throws IllegalArgumentException {
         checarNuloVazio(nome, endereco, servico, valor);
+        checkZeroNegativo(valor);
         return new Fatura(nome, endereco, servico, valor);
     }
 
@@ -57,6 +58,15 @@ public class Fatura {
         }
         if (nome=="" || endereco=="") {
             throw new IllegalArgumentException("ERRO: Nenhum parametro pode ser vazio");
+        }
+    }
+
+    private static void checkZeroNegativo(BigDecimal valor) throws IllegalArgumentException {
+        if (valor.compareTo(BigDecimal.ZERO) == 0) {
+            throw new IllegalArgumentException("ERRO: Valor zero");
+
+        } else if (valor.compareTo(BigDecimal.ZERO) < 0) {
+            throw new IllegalArgumentException("ERRO: Valor negativo");
         }
     }
 }
